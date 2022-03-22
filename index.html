@@ -198,7 +198,7 @@
                     <a href="https://www.instagram.com/official.eliaa/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
                 </div>
                 <div class="social-item">
-                    <a href="mailto:eliaalbanese@icloud.com"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></a>
+                    <a href="mailto:eliaalbanese@icloud.com?subject=Fragen zu den Angeboten&body=Hallo Elia," class="contactme"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></a>
                 </div>
             </div>
             <p>Copyright © 2022 Elia Albanese. All rights reserved</p>
@@ -206,6 +206,16 @@
     </section>
     <!-- End Footer -->
     <script src="./app.js"></script>
+    <script type="text/javascript">
+        $(function () {
+          $('.contactme').click(function (event) {
+            var email = 'eliaalbanese@icloud.com';
+            var subject = 'Fragen zu den Angeboten';
+            var emailBody = 'Hallo Elia,';
+            window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
+          });
+        });
+      </script>
 </body>
 
 </html>
