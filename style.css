@@ -291,7 +291,7 @@ p {
 	flex-direction: column;
 	padding: 30px;
 	border-radius: 10px;
-	background-image: url(./img/img-1.png);
+	background-image: url(./img/angebote-website.jpg);
 	background-size: cover;
 	margin: 10px 5%;
 	position: relative;
@@ -696,7 +696,7 @@ p {
 	/* End header */
 
 	#services .service-bottom .service-item {
-		flex-basis: 22%;
+		flex-basis: 45%;
 		margin: 1.5%;
 	}
 }
