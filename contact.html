@@ -1,20 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Scenic &mdash; Website Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">    
-  </head>
-  <body>
-    
+<head>
+  <title>Elia Albanese &mdash; Kontakt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/custom-bs.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/line-icons/style.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
   <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -22,7 +24,7 @@
     </div>
   </div>
 
-<div class="site-wrap">
+  <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -32,33 +34,32 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
+
 
     <!-- NAVBAR -->
     <header class="site-navbar mt-3" id="top">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">Scenic</a></div>
+          <div class="site-logo col-6"><a href="index.html">Elia Albanese</a></div>
+
+
+
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-lg-block">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
               <li class="has-children">
-                <a href="services.html">Pages</a>
+                <a href="services.html">Weiteres</a>
                 <ul class="dropdown">
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="service-single.html">Service Single</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="faq.html">Frequently Ask Questions</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="services.html">Angebote</a></li>
+                  <li><a href="service-single.html">Angebote einzeln</a></li>
+                  <li><a href="portfolio-single.html">Portfolio einzeln</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
                 </ul>
               </li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html" class="active">Contact</a></li>
+              <li><a href="contact.html" class="nav-link active">Kontakt</a></li>
             </ul>
           </nav>
 
@@ -76,14 +77,15 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-8 text-center">
-            <h1>Contact Us</h1>
+            <h1>Kontaktieren Sie mich</h1>
             <div class="mx-auto w-75">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet ab laboriosam asperiores commodi.</p>
+              <p>Bei Fragen, Hilfe oder Anfragen, können Sie mich jederzeit kontaktieren. Ich werde schnellstmöglich
+                antworten.</p>
             </div>
           </div>
         </div>
       </div>
-        
+
       <!-- VIDEO -->
       <div class="video-container">
         <video autoplay loop="true">
@@ -101,49 +103,50 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0">
-            <form action="#" class="">
+            <form method="POST" action="discord.php" id="form">
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
+                  <label class="text-black" for="vorname">Vorname</label>
+                  <input type="text" id="vorname" class="form-control" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
+                  <label class="text-black" for="nachname">Nachname</label>
+                  <input type="text" id="nachname" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
-                
+
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <label class="text-black" for="email">E-Mail</label>
+                  <input type="email" id="email" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Subject</label> 
-                  <input type="subject" id="subject" class="form-control">
-                </div>
-              </div>
 
-              <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                  <label class="text-black" for="betreff">Betreff</label>
+                  <input type="subject" id="betreff" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
+                  <label class="text-black" for="nachricht">Nachricht</label>
+                  <textarea name="message" id="nachricht" cols="30" rows="7" class="form-control"
+                    placeholder="Ihre Nachricht..."></textarea>
                 </div>
               </div>
 
-  
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Senden" class="btn btn-primary btn-md text-white">
+                </div>
+              </div>
+              <p class="text-base text-center text-gray-400" id="result"></p>
+
             </form>
           </div>
           <div class="col-lg-5 ml-auto">
@@ -163,7 +166,7 @@
       </div>
     </section>
 
-    
+
 
     <footer class="site-footer slanted-footer">
 
@@ -174,38 +177,36 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Scenic Products</h3>
+            <h3>Angebote</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Resources</a></li>
+              <li><a href="services.html">Konzepte erstellen</a></li>
+              <li><a href="services.html">Kunden Vorschläge</a></li>
+              <li><a href="services.html">Web Design</a></li>
+              <li><a href="services.html">Web Applikationen</a></li>
+              <li><a href="services.html">Web Hosting</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
+            <h3>Elia Albanese</h3>
             <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Support</h3>
+            <h3>Kontakt & Support</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
               <li><a href="#">Privacy</a></li>
               <li><a href="#">Terms of Service</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Contact Us</h3>
+            <h3>Socials</h3>
             <div class="footer-social">
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
               <a href="#"><span class="icon-linkedin"></span></a>
+              <a href="#"><span class="icon-github"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
             </div>
           </div>
         </div>
@@ -213,29 +214,71 @@
         <div class="row text-center">
           <div class="col-12">
             <p class="copyright"><small class="block">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </small></p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | Created by <a
+                  href="https://www.elia-albanese.ch/" target="_blank">Elia Albanese</a> made with <i
+                  class="icon-heart text-danger" aria-hidden="true"></i>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </small></p>
           </div>
         </div>
       </div>
     </footer>
-  
+
   </div>
 
-    <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    
-    <script src="js/custom.js"></script>
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/stickyfill.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
 
-  </body>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+
+  <script src="js/custom.js"></script>
+  <script>
+    const form = document.getElementById("form");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      result.innerText = "Bitte warten...";
+
+      fetch("discord.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(async (response) => {
+          let text = await response.text();
+          result.classList.remove("text-gray-500");
+          result.innerText = text;
+          if (response.status == 200) {
+            result.classList.add("text-green-500");
+          } else {
+            console.log(response);
+            result.classList.add("text-red-500");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.innerText = "Es gab einen Fehler";
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            result.style.display = "none";
+          }, 5000);
+        });
+    });
+  </script>
+
+</body>
+
 </html>
