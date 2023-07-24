@@ -136,8 +136,8 @@
                         <h3 class="section-title-sub text-primary">Über mich</h3>
                         <h2 class="section-title mb-4">Wer bin ich</h2>
 
-                        <p>Ich heisse Elia Albanese, bin 20 Jahre alt und mache eine Lehre als Informatiker
-                            Applikationsentwickler (im 4. Lehrjahr). Als Nebenjobs möchte ich kleine Geschäfte dabei
+                        <p>Ich heisse Elia Albanese, bin <span id="age"></span> Jahre alt und habe eine Lehre als Informatiker
+                            Applikationsentwickler erfolgreich abgeschlossen. Als Nebenjobs möchte ich kleine Geschäfte dabei
                             unterstützen, durch eine eigene Website eine grössere Reichweite
                             zu erreichen. Ich entwickle täglich Webseiten und habe daher schon seit knapp 3 Jahre viele
                             Erfahrungen gesammelt. Daher weiss ich, was heutzutage gefragt ist. Ich hoffe, Ihr Interesse
@@ -147,9 +147,9 @@
                         <p class="mt-4"><a href="about.html" class="spepcial_link">Mehr über mich erfahren</a></p>
                     </div>
                     <div class="col-md-5 ml-auto img-overlap">
-                        <div class="img-1"><img src="images/sq_img_6.jpg" alt="Image" class="img-fluid img-shadow">
+                        <div class="img-1"><img src="images/undraw_product_iteration_kjok.svg" alt="Image" class="img-fluid">
                         </div>
-                        <div class="img-2"><img src="images/sq_img_10.jpg" alt="Image" class="img-fluid img-shadow">
+                        <div class="img-2"><img src="images/undraw_code_review_re_woeb.svg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -295,11 +295,11 @@
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <a data-fancybox data-ratio="2" href="https://vimeo.com/317571768" class="block__96788">
                             <span class="play-icon"><span class="icon-play"></span></span>
-                            <img src="images/sq_img_6.jpg" alt="Image" class="img-fluid img-shadow">
+                            <img src="images/undraw_online_collaboration_re_bkpm.svg" alt="Image" class="img-fluid img-shadow">
                         </a>
                     </div>
                     <div class="col-lg-5 ml-auto">
-                        <h3 class="section-title-sub text-primary">Freelancer</h3>
+                        <h3 class="section-title-sub text-primary">Ihre Wahl</h3>
                         <h2 class="section-title mb-3">Wieso ich?</h2>
                         <p class="lead">Wieso sollten Sie mich wählen?</p>
                         <p>Wenn Sie einen Webdesigner/Webentwickler suchen, der technisches Know-how, Kreativität,
@@ -371,6 +371,34 @@
         </footer>
 
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const birthDate = "2003-05-23";
+        
+            function updateAge() {
+                const now = new Date();
+                const birthDateParts = birthDate.split("-");
+                const birthMonth = parseInt(birthDateParts[1]);
+                const birthDay = parseInt(birthDateParts[2]);
+                const todayMonth = now.getMonth() + 1;
+                const todayDay = now.getDate();
+        
+                let age = now.getFullYear() - parseInt(birthDateParts[0]);
+        
+                if (todayMonth < birthMonth || (todayMonth === birthMonth && todayDay < birthDay)) {
+                    age--;
+                }
+        
+                document.getElementById("age").textContent = age;
+            }
+        
+            updateAge();
+        
+            setInterval(updateAge, 86400000);
+        });
+        
+    </script>
 
     <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
