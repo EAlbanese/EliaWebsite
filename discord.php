@@ -32,5 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     echo "Erfolgreich abgesendet!";
   }
+
+  // E-Mail an den Absender senden
+  $empfaenger = $_POST["email"];
+  $betreff_mail = "Bestätigung: Ihre Anfrage wurde empfangen";
+  $nachricht_mail = "Vielen Dank für Ihre Anfrage, $nachname!\n\nIhre Anfrage wurde erfolgreich empfangen. Ich werden mich in Kürze mit Ihnen in Verbindung setzen.\n\nMit freundlichen Grüssen,\nElia Albanese";
+
+  mail($empfaenger, $betreff_mail, $nachricht_mail);
 }
 ?>
