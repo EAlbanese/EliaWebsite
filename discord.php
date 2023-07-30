@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // E-Mail an den Absender senden
   $empfaenger = $_POST["email"];
   $betreff_mail = "=?UTF-8?B?" . base64_encode("Bestätigung: Ihre Anfrage wurde empfangen") . "?=";
-  $nachricht_mail = "Vielen Dank für Ihre Anfrage, $anrede $nachname!\n\nIhre Anfrage wurde erfolgreich empfangen. Ich werde mich in Kürze mit Ihnen in Verbindung setzen.\n\nMit freundlichen Grüssen,\nElia Albanese";
+  $nachricht_mail = "Guten Tag $anrede $nachname \n\nBesten Dank für Ihre Anfrage. Ich werde mich in Kürze mit Ihnen in Verbindung setzen.\n\nMit freundlichen Grüssen,\nElia Albanese";
 
   $header = "MIME-Version: 1.0" . "\r\n";
   $header .= "Content-type: text/plain; charset=UTF-8" . "\r\n";
