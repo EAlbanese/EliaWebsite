@@ -130,6 +130,16 @@
             <form method="POST" action="discord.php" id="form">
 
               <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="text-black" for="anrede">Anrede</label>
+                  <select id="anrede" name="anrede" class="form-control" required>
+                    <option value="Herr">Herr</option>
+                    <option value="Frau">Frau</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="vorname">Vorname</label>
                   <input type="text" name="vorname" id="vorname" placeholder="Vorname" class="form-control" required>
@@ -142,9 +152,13 @@
 
               <div class="row form-group">
 
-                <div class="col-md-12">
+                <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="email">E-Mail</label>
-                  <input type="email" name="email" id="email" placeholder="E-Mail" class="form-control" required>
+                  <input type="email" name="email" id="email" placeholder="ihre@email.ch" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="phone">Telefon</label>
+                  <input type="tel" name="phone" id="phone" placeholder="+41 76 123 45 67" class="form-control">
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Informationen aus dem Kontaktformular erhalten
+  $anrede = $_POST["anrede"];
   $vorname = $_POST["vorname"];
   $nachname = $_POST["nachname"];
   $email = $_POST["email"];
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // JSON-Payload vorbereiten
   $payload = json_encode(array(
-    "content" => "Neue Anfrage @everyone:\n\nName: $vorname $nachname\n\nE-Mail: $email\n\nBetreff: $betreff\nNachricht: $nachricht"
+    "content" => "Neue Anfrage @everyone:\n\nAnrede: $anrede\nName: $vorname $nachname\n\nE-Mail: $email\n\nBetreff: $betreff\nNachricht: $nachricht"
   ));
 
   // cURL verwenden, um den Webhook zu senden
@@ -25,34 +26,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   ]);
   $result = curl_exec($ch);
 
-  // Fehlerbehandlung für cURL-Anfrage
+  // Erfolgsmeldung ausgeben oder Fehlermeldung, falls etwas schiefgegangen ist
   if ($result === false) {
-    echo "Leider ist ein Fehler beim Senden der Discord-Nachricht aufgetreten.";
-    // Hier können Sie weitere Aktionen hinzufügen, wenn die Discord-Nachricht nicht gesendet wurde
+    echo "Leider ist ein Fehler aufgetreten, bitte kontaktieren Sie mich unter folgender E-Mail: info@elia-albanese.ch";
   } else {
     echo "Erfolgreich abgesendet!";
-    // Hier können Sie weitere Aktionen hinzufügen, wenn die Discord-Nachricht erfolgreich gesendet wurde
   }
 
   curl_close($ch);
 
   // E-Mail an den Absender senden
   $empfaenger = $_POST["email"];
-  $betreff_mail = "Ihre Anfrage wurde empfangen";
-  $nachricht_mail = "Vielen Dank für Ihre Anfrage, $nachname!\n\nIhre Anfrage wurde erfolgreich empfangen. Ich werde mich in Kürze mit Ihnen in Verbindung setzen.\n\nMit freundlichen Grüssen,\nElia Albanese";
+  $betreff_mail = "=?UTF-8?B?" . base64_encode("Bestätigung: Ihre Anfrage wurde empfangen") . "?=";
+  $nachricht_mail = "Vielen Dank für Ihre Anfrage, $anrede $nachname!\n\nIhre Anfrage wurde erfolgreich empfangen. Ich werde mich in Kürze mit Ihnen in Verbindung setzen.\n\nMit freundlichen Grüssen,\nElia Albanese";
 
-  // E-Mail-Versand
-  $mail_success = mail($empfaenger, $betreff_mail, $nachricht_mail);
+  $header = "MIME-Version: 1.0" . "\r\n";
+  $header .= "Content-type: text/plain; charset=UTF-8" . "\r\n";
+  $header .= "From: <info@elia-albanese.ch>" . "\r\n";
 
-  // Fehlerbehandlung für E-Mail-Versand
-  if ($mail_success) {
-    echo "Erfolgreich abgesendet!";
-    // Erfolgsnachricht für den E-Mail-Versand
-    // Hier können Sie weitere Aktionen hinzufügen, wenn die E-Mail erfolgreich gesendet wurde
-  } else {
-    echo "Leider ist ein Fehler beim Senden der Email aufgetreten.";
-    // Fehlermeldung für den E-Mail-Versand
-    // Hier können Sie weitere Aktionen hinzufügen, wenn die E-Mail nicht gesendet wurde
-  }
+  mail($empfaenger, $betreff_mail, $nachricht_mail, $header);
 }
 ?>
