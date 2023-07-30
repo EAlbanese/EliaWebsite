@@ -132,11 +132,11 @@
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="vorname">Vorname</label>
-                  <input type="text" id="vorname" placeholder="Vorname" class="form-control" required>
+                  <input type="text" name="vorname" id="vorname" placeholder="Vorname" class="form-control" required>
                 </div>
                 <div class="col-md-6">
                   <label class="text-black" for="nachname">Nachname</label>
-                  <input type="text" id="nachname" placeholder="Nachname" class="form-control" required>
+                  <input type="text" name="nachname" id="nachname" placeholder="Nachname" class="form-control" required>
                 </div>
               </div>
 
@@ -144,7 +144,7 @@
 
                 <div class="col-md-12">
                   <label class="text-black" for="email">E-Mail</label>
-                  <input type="email" id="email" placeholder="E-Mail" class="form-control" required>
+                  <input type="email" name="email" id="email" placeholder="E-Mail" class="form-control" required>
                 </div>
               </div>
 
@@ -152,22 +152,22 @@
 
                 <div class="col-md-12">
                   <label class="text-black" for="betreff">Betreff</label>
-                  <input type="subject" placeholder="Betreff" id="betreff" class="form-control" required>
+                  <input type="subject" name="betreff" placeholder="Betreff" id="betreff" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="nachricht">Nachricht</label>
-                  <textarea name="message" id="nachricht" cols="30" rows="7" class="form-control"
+                  <textarea name="nachricht" id="nachricht" cols="30" rows="7" class="form-control"
                     placeholder="Ihre Nachricht..."></textarea>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <a href="#form" id="submit-button" class="btn btn-primary btn-md" style="width: 100%;"><img src="images/airplane.png" alt="airplane" style="width: 4%; margin-right: 2%;"> Senden</a>
-                  <!-- <input type="submit" value="Senden" class="btn btn-primary btn-md text-white" style="width: 100%;"> -->
+                  <!-- <a href="#form" type="submit" id="submit-button" class="btn btn-primary btn-md" style="width: 100%;"><img src="images/airplane.png" alt="airplane" style="width: 4%; margin-right: 2%;"> Senden</a> -->
+                  <input type="submit" id="submit-button" value="Senden" class="btn btn-primary btn-md text-white" style="width: 100%;">
                 </div>
               </div>
               <p class="text-base text-center text-gray-400" id="result"></p>
@@ -313,7 +313,6 @@
         result.style.color = "red";
       }
     });
-
   </script>
 
 </body>
