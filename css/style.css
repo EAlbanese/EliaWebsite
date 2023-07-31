@@ -1413,36 +1413,30 @@ h1, h2, h3, h4 {
   margin: 0 5px;
 }
 
-/* Gemeinsame Styles für Cards und Slider */
-
-/* Gemeinsame Styles für größere Bildschirme (Desktop) */
 .desktop {
-  display: block; /* Cards werden angezeigt */
+  display: block;
 }
 
-/* Gemeinsame Styles für Handys (Mobile) */
 .mobile {
-  display: none; /* Slider wird standardmäßig ausgeblendet */
+  display: none;
 }
 
-/* Media Query für größere Bildschirme (Desktop) */
 @media only screen and (min-width: 768px) {
   .desktop {
-      display: flex; /* Cards werden in einer Zeile (flexbox) angezeigt */
+      display: flex;
   }
 
   .mobile {
-      display: none; /* Slider wird ausgeblendet */
+      display: none; 
   }
 }
 
-/* Media Query für Handys (Mobile) */
 @media only screen and (max-width: 767px) {
   .desktop {
-      display: none; /* Cards werden ausgeblendet */
+      display: none; 
   }
 
   .mobile {
-      display: block; /* Slider wird angezeigt */
+      display: block; 
   }
 }
