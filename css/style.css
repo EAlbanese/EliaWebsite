@@ -1440,3 +1440,27 @@ h1, h2, h3, h4 {
       display: block; 
   }
 }
+
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control:hover {
+  cursor: text;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+
