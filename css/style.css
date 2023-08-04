@@ -676,8 +676,8 @@ h1, h2, h3, h4 {
     @media (max-width: 991.98px) {
       .block__62849 .block__16443:hover {
         top: 0; } }
-    .block__62849 .block__16443:hover .custom-icon {
-      background: transparent; }
+    /* .block__62849 .block__16443:hover .custom-icon {
+      background: transparent; } */
       .block__62849 .block__16443:hover .custom-icon [class^="icon-"], .block__62849 .block__16443:hover .custom-icon [class^="flaticon-"] {
         color: #007bff; }
 
