@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="fonts/line-icons/style.css">
 
+
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -180,6 +181,14 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
+                  <label class="text-black" for="math-question"></label>
+                  <span id="math-question"></span>
+                  <input type="number" name="math-answer" id="math-answer" class="form-control" required>
+                </div>
+              </div>              
+
+              <div class="row form-group">
+                <div class="col-md-12">
                   <input type="submit" id="submit-button" value="Senden" class="btn btn-primary btn-md text-white" style="width: 100%;">
                 </div>                
               </div>
@@ -282,6 +291,48 @@
   <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 
   <script src="js/custom.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("form");
+      const mathQuestion = document.getElementById("math-question");
+      const mathAnswerInput = document.getElementById("math-answer");
+      const submitButton = document.getElementById("submit-button");
+    
+      // Funktion zur Generierung einer zufälligen mathematischen Aufgabe
+      function generateMathQuestion() {
+        const num1 = Math.floor(Math.random() * 10) + 1; // Zufällige Zahl von 1 bis 10
+        const num2 = Math.floor(Math.random() * 10) + 1; // Zufällige Zahl von 1 bis 10
+        const operator = Math.random() < 0.5 ? "+" : "-"; // Zufällige Auswahl von + oder -
+        
+        mathQuestion.textContent = `Was ist ${num1} ${operator} ${num2}?`;
+        
+        // Berechne die korrekte Antwort
+        const correctAnswer = operator === "+" ? num1 + num2 : num1 - num2;
+    
+        return correctAnswer;
+      }
+    
+      // Initialisiere die Aufgabe beim Laden der Seite
+      let correctAnswer = generateMathQuestion();
+    
+      form.addEventListener("submit", function(event) {
+        const userAnswer = parseInt(mathAnswerInput.value);
+    
+        if (userAnswer !== correctAnswer) {
+          // Wenn die Antwort falsch ist, das Formular absenden verhindern
+          event.preventDefault();
+          alert("Die Antwort auf die mathematische Aufgabe ist falsch. Bitte korrigieren Sie Ihre Antwort.");
+        } else {
+          // Wenn die Antwort korrekt ist, generiere eine neue Aufgabe
+          correctAnswer = generateMathQuestion();
+        }
+      });
+    });
+  </script>
+    
+    
+
   <script>
     const form = document.getElementById("form");
     const submitButton = document.getElementById("submit-button");
@@ -289,6 +340,13 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // Überprüfen, ob das Captcha überprüft wurde
+      if (grecaptcha.getResponse().length === 0) {
+        result.innerText = "Bitte bestätigen Sie, dass Sie kein Roboter sind.";
+        result.style.color = "red";
+        return;
+      }    
 
       // Überprüfen, ob alle Formularfelder ausgefüllt sind
       if (form.checkValidity()) {
