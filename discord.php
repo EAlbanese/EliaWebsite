@@ -1,5 +1,32 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Überprüfen, ob der Benutzer innerhalb von 5 Minuten mehr als 2 Formulare gesendet hat
+  $ip = $_SERVER['REMOTE_ADDR'];
+  $storageFile = 'form_submission_times.json'; // Datei zur Speicherung der Zeiten
+
+  if (file_exists($storageFile)) {
+    $submissionTimes = json_decode(file_get_contents($storageFile), true);
+  } else {
+    $submissionTimes = [];
+  }
+
+  if (!isset($submissionTimes[$ip])) {
+    $submissionTimes[$ip] = [];
+  }
+
+  $currentTime = time();
+
+  // Prüfen, ob der Benutzer bereits 2 Formulare innerhalb von 5 Minuten gesendet hat
+  if (count($submissionTimes[$ip]) >= 2) {
+    $earliestTime = $submissionTimes[$ip][0];
+    if ($currentTime - $earliestTime <= 300) { // 300 Sekunden = 5 Minuten
+      echo "Sie haben bereits 2 Formulare innerhalb von 5 Minuten gesendet. Bitte warten Sie eine Weile, bevor Sie ein weiteres Formular senden.";
+      exit;
+    }
+    // Entfernen Sie die älteste Zeitmarke, wenn mehr als 2 Formulare gesendet wurden
+    array_shift($submissionTimes[$ip]);
+  }
+
   // Informationen aus dem Kontaktformular erhalten
   $anrede = $_POST["anrede"];
   $vorname = $_POST["vorname"];
@@ -45,5 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $header .= "From: <info@elia-albanese.ch>" . "\r\n";
 
   mail($empfaenger, $betreff_mail, $nachricht_mail, $header);
+
+  // Speichern Sie den Zeitpunkt der Formularsendung
+  $submissionTimes[$ip][] = $currentTime;
+
+  // Speichern Sie die Zeiten in einer Datei
+  file_put_contents($storageFile, json_encode($submissionTimes));
 }
 ?>
